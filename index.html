@@ -90,7 +90,7 @@
 			</section>
 
 			<!-- Three -->
-			<section id="three" class="wrapper spotlight style3">
+			<!-- 		<section id="three" class="wrapper spotlight style3">
 				<div class="inner">
 					<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
 					<div class="content">
@@ -101,22 +101,27 @@
 						<a href="#" class="special">Learn more</a>
 					</div>
 				</div>
-			</section>
+			</section> -->
 
 			<!-- Four -->
 			<section id="four" class="wrapper alt style1">
 				<div class="inner">
-					<h2 class="major">Vitae phasellus</h2>
-					<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat.
-						Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem
-						lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+					<h2 class="major">Portfolio</h2>
+					<p>Over the last six months I've worked hard to build a solid foundation in web development.
+						Learning to program by myself was one thing, but I also spent a great deal of time learning to
+						program with others, and master the ins and outs of trying not to work over eachother in github!
+					</p>
 					<section class="features">
 						<article>
-							<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-							<h3 class="major">Sed feugiat lorem</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus
-								ultrices.</p>
-							<a href="#" class="special">Learn more</a>
+							<a href="https://shannon-burke.github.io/Project-1/" class="image"><img
+									src="images/stemm1.jpg" alt="" /></a>
+							<h3 class="major">STEMM</h3>
+							<p>STEMM was my first group project, made in conjunction with Shannon Burke, Sam Tricamo,
+								and Phil Rivadeneira.
+								My section of the project focused on the main functionality of the app, which consisted
+								of prompting the user to take short quiz and then hitting the wikipedia API to return
+								the article of a plant that we reccomended.</p>
+							<a href="https://github.com/shannon-burke/Project-1" class="special">Github Repo</a>
 						</article>
 						<article>
 							<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
@@ -152,18 +157,13 @@
 		<section id="footer">
 			<div class="inner">
 				<h2 class="major">Get in touch</h2>
-				<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce
-					tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in
-					tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+				<p>I have some work not listed here, and I'm always happy to answer questions about my projects! Feel
+					free to ask about anything I've done!</p>
 				<form method="post" action="#">
 					<div class="fields">
 						<div class="field">
-							<label for="name">Name</label>
-							<input type="text" name="name" id="name" />
-						</div>
-						<div class="field">
-							<label for="email">Email</label>
-							<input type="email" name="email" id="email" />
+							<label for="subject">Subject</label>
+							<input type="text" name="subject" id="subject" />
 						</div>
 						<div class="field">
 							<label for="message">Message</label>
@@ -171,7 +171,7 @@
 						</div>
 					</div>
 					<ul class="actions">
-						<li><input type="submit" value="Send Message" /></li>
+						<li><input type="submit" value="Send Message" onclick="sendEmail()" /></li>
 					</ul>
 				</form>
 				<ul class="contact">
@@ -195,7 +195,15 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-
+	<script>
+		var sendEmail = function () {
+			event.preventDefault();
+			var email = "daniel.smith8795@gmail.com";
+			var subject = $("#subject").val();
+			var emailBody = $("#message").val();
+			document.location = "mailto:" + email + "?subject=" + subject + "&body=" + emailBody;
+		}
+	</script>
 </body>
 
 </html>
